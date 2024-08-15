@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block main %}
+<table class="table">
+  <tbody>
+    <tr>
+      <th>nombre de usuario</th>
+      <td>{{ user.username }}</td>
+    </tr>
+    <tr>
+      <th>dirección de correo electrónico</th>
+      <td>{{ user.email }}</td>
+    </tr>
+    <tr>
+      <th>edad</th>
+      <td>{{ user.age }}</td>
+    </tr>
+  </tbody>
+</table>
+<a href="{% url 'user_update' user.pk %}">editar</a>
+<a href="{% url 'password_change' %}">Cambiar la contraseña</a>    <!-- 追記 -->
+{% endblock %}
